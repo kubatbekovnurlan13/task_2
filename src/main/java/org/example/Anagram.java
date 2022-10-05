@@ -64,13 +64,13 @@ public class Anagram {
             }
         }
 
-        int z = 0;
+        int counter = 0;
         for (int j = 0; j < letters.length; j++) {
             String letter = letters[j];
             if (StringUtils.isAlphanumeric(letter) & !NumberUtils.isNumber(letter)) {
-                if ((reversedWord.size() > z)) {
-                    letters[j] = reversedWord.get(z);
-                    z++;
+                if ((reversedWord.size() > counter)) {
+                    letters[j] = reversedWord.get(counter);
+                    counter++;
                 }
             }
         }
