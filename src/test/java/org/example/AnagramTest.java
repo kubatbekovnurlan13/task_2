@@ -9,15 +9,13 @@ public class AnagramTest {
     Anagram anagram = new Anagram();
 
     @Test
-    void testNull_testForNullInput() {
-        assertThrows(NullPointerException.class, () -> {
-            anagram.reverseText(null);
-        });
+    void null_testNull_whenNullInput() {
+        assertThrows(NullPointerException.class, () -> anagram.reverseText(null));
 
     }
 
     @Test
-    void testReverse_testForReversingText() {
+    void reverseText_testReverse_whenTextInput() {
         String actual = anagram.reverseText("   abcd -o=p- efgh");
         String expected = "   dcba -p=o- hgfe";
         assertEquals(expected, actual);
@@ -26,7 +24,7 @@ public class AnagramTest {
 
 
     @Test
-    void testEmpty_testForEmptyInput() {
+    void empty_testEmpty_whenEmptyInput() {
         String actual = anagram.reverseText("");
         String expected = "";
         assertEquals(expected, actual);
@@ -34,7 +32,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testSingle_testForSingleSpaceInput() {
+    void single_testSingle_whenSingleSpaceInput() {
         String actual = anagram.reverseText(" ");
         String expected = " ";
         assertEquals(expected, actual);
@@ -42,7 +40,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testSeveral_testForSeveralSpaceInput() {
+    void several_testSeveral_whenSeveralSpaceInput() {
         String actual = anagram.reverseText("   ");
         String expected = "   ";
         assertEquals(expected, actual);
@@ -50,7 +48,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testSingleChar_testForSingleCharacterInput() {
+    void singleChar_testSingleChar_whenSingleCharacterInput() {
         String actual = anagram.reverseText("a");
         String expected = "a";
         assertEquals(expected, actual);
@@ -58,7 +56,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testMultiple_testForMultipleSameLetterInput() {
+    void multiple_testMultiple_whenMultipleSameLetterInput() {
         String actual = anagram.reverseText("aaaa");
         String expected = "aaaa";
         assertEquals(expected, actual);
@@ -66,7 +64,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testSameLetter_testForSameLetterInLowerAndUpperCasesMixedInput() {
+    void sameLetter_testSameLetter_whenSameLetterInLowerAndUpperCasesMixedInput() {
         String actual = anagram.reverseText("AaAAaaAa");
         String expected = "aAaaAAaA";
         assertEquals(expected, actual);
@@ -74,7 +72,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testWord_testForWordWithDifferentLetters() {
+    void word_testWord_whenWordWithDifferentLettersInput() {
         String actual = anagram.reverseText("poINt");
         String expected = "tNIop";
         assertEquals(expected, actual);
@@ -82,7 +80,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testSymbols_testForOnlySymbols() {
+    void symbols_testSymbols_whenOnlySymbolsInput() {
         String actual = anagram.reverseText("!@#$%^&*?");
         String expected = "!@#$%^&*?";
         assertEquals(expected, actual);
@@ -90,7 +88,7 @@ public class AnagramTest {
     }
 
     @Test
-    void testWords_testForSeveralWords() {
+    void words_testWords_whenSeveralWordsInput() {
         String actual = anagram.reverseText("My Points");
         String expected = "yM stnioP";
         assertEquals(expected, actual);
