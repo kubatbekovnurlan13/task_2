@@ -8,7 +8,6 @@ public class AnagramTest {
 
     private Anagram anagram = new Anagram();
 
-
     @Test
     void reverseText_testReverse_whenTextInput() {
         String actual = anagram.reverseText("   abcd -o=p- efgh");
@@ -22,8 +21,6 @@ public class AnagramTest {
         assertThrows(NullPointerException.class, () -> anagram.reverseText(null));
 
     }
-
-
 
 
     @Test
